@@ -1,5 +1,5 @@
-# Esse projeto foi feito: [Meu site do Projeto! CLICK AQUI !!!](https://avaliacoes-de-filmes.netlify.app/)
-## ![DevSuperior logo](https://raw.githubusercontent.com/devsuperior/bds-assets/main/ds/devsuperior-logo-small.png) Semana Spring React - treinamento gratuito
+# [Meu site do Projeto! CLICK AQUI !!!](https://avaliacoes-de-filmes.netlify.app/)
+## ![DevSuperior logo](https://raw.githubusercontent.com/devsuperior/bds-assets/main/ds/devsuperior-logo-small.png) Esse projeto foi feito: Semana Spring React - treinamento gratuito
 
 ## Realização
 [DevSuperior - Escola de programação](https://devsuperior.com.br)
