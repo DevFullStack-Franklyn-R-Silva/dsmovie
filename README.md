@@ -2,6 +2,9 @@
 
 ### Esse é um sistemas completo que desenvolvemos usando as tecnologias Spring Boot 4.x para desenvolver uma API REST com boas práticas de Engenharia de Software onde hospedamos a mesma na plataforma Herokun e posteriormente criamos um sistema Frontend com o framework React para consumir nossa API. Nossa aplicação foi hospedada no Github Pages e está disponível no link # [Meu site do Projeto! CLICK AQUI !!!](https://avaliacoes-de-filmes.netlify.app/)
 
+Obs: Utilizamos a conta free Heroku e após 30 minutos a API entra em modo sleeping então na próxima requisição a mesma pode demorar certa de 30 segundos para responder
+#
+
 ## Realização
 [DevSuperior - Escola de programação](https://devsuperior.com.br)
 
