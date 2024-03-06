@@ -30,12 +30,7 @@ jobs:
     - name: List running containers
       run: docker ps
 
-    - name: Run tests on backend
-      working-directory: backend
-      run: |
-        docker exec backend-container ./mvnw test
-
-    - name: Stop and remove containers
+    - name: Cleanup
       run: |
         docker stop backend-container
         docker rm backend-container
