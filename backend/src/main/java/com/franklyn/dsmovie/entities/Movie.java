@@ -3,6 +3,7 @@ package com.franklyn.dsmovie.entities;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,9 +18,13 @@ public class Movie {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@Column
 	private String title;
+	@Column
 	private Double score;
+	@Column
 	private Integer count;
+	@Column
 	private String image;
 
 	@OneToMany(mappedBy = "id.movie")
