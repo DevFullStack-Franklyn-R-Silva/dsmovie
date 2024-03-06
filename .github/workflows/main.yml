@@ -10,13 +10,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
-    - name: Set up Docker Compose
-      run: |
-        ls -l $GITHUB_WORKSPACE
-        docker-compose -f $GITHUB_WORKSPACE/docker-compose.yml build
+      - name: Build and Push Docker Images
+        run: |
+          cd backend
+          docker-compose -f docker-compose.yml build
 
   deploy:
     runs-on: ubuntu-latest
@@ -24,8 +24,7 @@ jobs:
     needs: build
 
     steps:
-    - name: Set up Docker Compose
-    - name: Set up Docker Compose
-      run: |
-        ls -l $GITHUB_WORKSPACE
-        docker-compose -f $GITHUB_WORKSPACE/backend/docker-compose.yml up -d
+      - name: Deploy Application
+        run: |
+          cd backend
+          docker-compose -f docker-compose.yml up -d
