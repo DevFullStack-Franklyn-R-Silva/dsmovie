@@ -25,4 +25,7 @@ jobs:
 
     steps:
     - name: Set up Docker Compose
-      run: docker-compose -f $GITHUB_WORKSPACE/docker-compose.yml up -d
+      run: |
+        ls -l $GITHUB_WORKSPACE
+        cd $GITHUB_WORKSPACE
+        docker-compose -f docker-compose.yml up -d
