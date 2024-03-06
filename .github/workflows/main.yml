@@ -10,13 +10,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
+    - name: Checkout Repository
+      uses: actions/checkout@v2
 
-      - name: Build and Push Docker Images
-        run: |
-          cd backend
-          docker-compose -f docker-compose.yml build
+    - name: Build Docker Images
+      run: |
+        cd meu-projeto/backend  # Modifique o caminho conforme a estrutura do seu repositório
+        docker-compose -f docker-compose.yml build
 
   deploy:
     runs-on: ubuntu-latest
@@ -24,7 +24,7 @@ jobs:
     needs: build
 
     steps:
-      - name: Deploy Application
-        run: |
-          cd backend
-          docker-compose -f docker-compose.yml up -d
+    - name: Deploy Application
+      run: |
+        cd meu-projeto/backend  # Modifique o caminho conforme a estrutura do seu repositório
+        docker-compose -f docker-compose.yml up -d
