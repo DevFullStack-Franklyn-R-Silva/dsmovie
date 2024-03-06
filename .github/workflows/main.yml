@@ -18,19 +18,22 @@ jobs:
       run: |
         docker build -t backend-image .
         docker run -d -p 8080:8080 --name backend-container backend-image
+        sleep 60
 
     - name: Build and run frontend
       working-directory: frontend
       run: |
         docker build -t frontend-image .
         docker run -d -p 3000:3000 --name frontend-container frontend-image
+        sleep 30
 
-    - name: Wait for services to start
-      run: sleep 30
+    - name: List running containers
+      run: docker ps
 
-    - name: Run tests (adjust this step based on your needs)
+    - name: Run tests on backend
       working-directory: backend
-      run: docker exec backend-container ./mvnw test
+      run: |
+        docker exec backend-container ./mvnw test
 
     - name: Stop and remove containers
       run: |
