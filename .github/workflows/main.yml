@@ -12,10 +12,14 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
+      with:
+        working-directory: backend
 
-    - name: Build Docker Images
+    - name: Debug Directory Structure
       run: |
+        ls -la
         cd backend
+        ls -la
         docker-compose -f docker-compose.yml build
 
   deploy:
