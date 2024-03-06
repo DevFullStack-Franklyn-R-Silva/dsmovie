@@ -1,0 +1,34 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - docker
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: List files in the directory
+      run: ls -l
+
+    - name: Set up Docker Compose
+      run: |
+        cd backend
+        ls -l
+        docker-compose -f docker-compose.yml build
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    needs: build
+
+    steps:
+    - name: Set up Docker Compose
+      run: docker-compose -f backend/docker-compose.yml up -d
+
+  
