@@ -14,7 +14,9 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Set up Docker Compose
-      run: docker-compose -f docker-compose.yml build
+      run: |
+        ls -l $GITHUB_WORKSPACE
+        docker-compose -f $GITHUB_WORKSPACE/docker-compose.yml build
 
   deploy:
     runs-on: ubuntu-latest
@@ -23,4 +25,4 @@ jobs:
 
     steps:
     - name: Set up Docker Compose
-      run: docker-compose -f docker-compose.yml up -d
+      run: docker-compose -f $GITHUB_WORKSPACE/docker-compose.yml up -d
