@@ -15,7 +15,7 @@ jobs:
 
     - name: Build Docker Images
       run: |
-        cd meu-projeto/backend  # Modifique o caminho conforme a estrutura do seu repositório
+        cd backend
         docker-compose -f docker-compose.yml build
 
   deploy:
@@ -26,5 +26,5 @@ jobs:
     steps:
     - name: Deploy Application
       run: |
-        cd meu-projeto/backend  # Modifique o caminho conforme a estrutura do seu repositório
+        cd backend
         docker-compose -f docker-compose.yml up -d
